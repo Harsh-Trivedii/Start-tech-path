@@ -1,6 +1,6 @@
 # Start Tech Path
 
-Welcome to Start Tech Path – your gateway to a stress-free job search experience! 🎉
+Welcome to Start Tech Path – your gateway to a stress-free job search experience! 🎉 <br/>
 [NOTE: This is my college final year project]
 
 ## Overview
