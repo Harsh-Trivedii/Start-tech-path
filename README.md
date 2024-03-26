@@ -49,3 +49,53 @@ To get started with the Start Tech Path project, follow these steps:
 5. Make migrations: `python manage.py migrate` 
 6. Run the development server: `python manage.py runserver`.
 7. Access the application in your web browser at `http://localhost:8000`.
+
+
+## Website 🌐
+
+### User side
+
+#### User SignUp
+![Register](Images/Register.png)
+
+#### User Login
+![login](Images/login.png)
+
+#### Homepage
+![home](Images/home.png)
+
+#### Contact
+![contact](Images/contact.png)
+
+#### View Jobs
+![viewjob](Images/viewjob.png)
+
+#### Take Subscription to access active referrals
+![subscribe](Images/subscribe.png)
+
+#### View available referrals and apply that matches your criteria
+![viewreferrals](Images/viewreferrals.png)
+
+#### Manage User Profile
+![Userprofile](Images/userprofile.png)
+
+![Userprofile2](Images/userprofile2.png)
+
+![Userprofile3](Images/userprofile3.png)
+
+### Professional account
+
+#### Profile
+![profile](Images/profile.png)
+
+#### Add job if profile is approved by admin
+![addjob](Images/addjob.png)
+
+#### View Applicants and approve
+![viewapplicants](Images/viewapplicants.png)
+
+#### User will receive this approval mail with link
+![emailapprove](Images/emailapprove.png)
+
+
+
