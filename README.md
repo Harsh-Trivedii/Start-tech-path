@@ -56,7 +56,7 @@ To get started with the Start Tech Path project, follow these steps:
 ### User side
 
 #### User SignUp
-![Register](Images/Register.png)
+![Register](Images/register.png)
 
 #### User Login
 ![login](Images/login.png)
