@@ -1,0 +1,72 @@
+.container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h2 {
+    color: #007BFF;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.intro {
+    color: #495057;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.benefits {
+    margin-bottom: 30px;
+}
+
+h3 {
+    color: #007BFF;
+    margin-bottom: 15px;
+}
+
+ul {
+    list-style-type: disc;
+    color: #495057;
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
+
+.join {
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.error-message{
+    color:red;
+}
+
+.congratulations{
+    color:green;
+    font-size: 18px;
+}
+
+button {
+    background-color: #fac031;
+    color: black;
+    font-weight: bold;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #f7b714;
+}

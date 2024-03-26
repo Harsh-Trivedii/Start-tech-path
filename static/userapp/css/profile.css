@@ -1,0 +1,139 @@
+/* userapp/css/profile.css */
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #fac031; /* Updated border color */
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(250, 192, 49, 0.5); /* Updated box shadow */
+    position: relative;
+}
+
+h2 {
+    color: #007BFF;
+    text-align: center;
+    letter-spacing: 5px;
+    margin-bottom: 60px;
+}
+
+strong {
+    font-weight: bold;
+}
+
+
+.subscription-status {
+    margin-top: 15px;
+}
+
+.subscription-status strong {
+    display: block;
+    margin-bottom: 10px;
+    color: #000;
+    font-weight: bold;
+}
+
+.premium-status,
+.regular-status {
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.premium-status {
+    background-color: #ffd700;
+    color: #000;
+}
+
+.regular-status {
+    background-color: #007BFF;
+    color: #fff;
+}
+
+
+form {
+    margin-top: 20px;
+}
+
+/* Style for form inputs and labels */
+form label {
+    display: block;
+    margin-bottom: 10px; /* Increased margin */
+    color: #000; /* Updated label text color */
+    font-weight: bold; /* Bold label text */
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="number"],
+form textarea,
+form select,
+form input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px; /* Increased margin */
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #fff;
+    color: #495057;
+    transition: border-color 0.3s;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="number"]:focus,
+form textarea:focus,
+form select:focus,
+form input[type="file"]:focus {
+    outline: none;
+    border-color: #007BFF;
+}
+
+/* Style for the user photo */
+#user-photo {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    position: absolute;
+    top: 20px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+}
+
+#user-photo.premium-user {
+    border: 5px solid #ffd700; /* Golden border color */
+}
+
+/* Style for the allowed file format message */
+.file-format-message {
+    color: #d9534f;
+    margin-bottom: 20px; /* Increased margin */
+}
+
+button {
+    background-color: #fac031; /* Updated button background color */
+    color: #000; /* Updated button text color */
+    padding: 15px 20px; /* Increased padding */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #fabc21; /* Updated hover background color */
+}
+
+.alert {
+    padding: 8px 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.alert-success {
+    background-color: #28a745;
+    color: #fff;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{%extends 'professionalapp/base.html'%}
+{%load static%}
+{%block addjobblock%}
+<link rel="stylesheet" href="{%static 'professionalapp/css/addjob.css'%}">
+<head>
+    <title>Add Job Opening</title>
+</head>
+<body>
+    <div class="jobopening">
+    
+    <h2>Add Job Opening</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        {% if success_message %}
+            <div class="alert alert-success">
+                {{ success_message }}
+            </div>
+         {% endif %}
+         {%if error_message %}
+            <div class="alert alert-danger">
+                {{ error_message }}
+            </div>
+         {%endif%}
+        <button type="submit">Submit</button>
+    </form>
+    </div>
+</body>
+{%endblock%}

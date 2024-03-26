@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+{%extends 'professionalapp/base.html'%}
+{%load static%}
+{%block bodyblock%}
+<link rel="stylesheet" href="{%static 'professionalapp/css/mainpage.css'%}">
+<section>
+<div class="main">
+    <div class="men_text">
+        <h1>START YOUR <span>TECH</span> JOURNEY...</h1>
+    </div>
+
+    <div class="main_image">
+        <img src="{%static 'userapp/images/jobmain1.png'%}">
+    </div>
+
+</div>
+
+<p>
+    Unlocking new opportunities in today's job market is key to success. 'Start Tech Path' is your go-to website, designed to make job hunting easier and more effective. We understand the challenges job seekers face, especially with the current tech sector slowdown in India. Our platform connects you directly to job openings, and here's the game-changer – with a small subscription fee, you get access to job referrals from professionals in our network. It's like having an insider helping you land your dream job! 'Start Tech Path' is all about making job searches stress-free and bringing job seekers and companies together in a whole new way. Join us on this journey where endless opportunities await those who are ready to take charge of their career path.
+</p>
+
+<div class="main_btn">
+    <a href="{% url 'addjob'%}">Add Job</a>
+    <i class="fa-solid fa-angle-right"></i>
+</div>
+</section>
+
+
+<div class="objectives">
+    <div class="obj_main">
+
+        <div class="image">
+            <img src="{%static 'userapp/images/logo.png'%}">
+        </div>
+
+        <div class="obj_text">
+            <h1><span>Our</span>Objective</h1>
+            <h3>Why Choose us?</h3>
+            <ul>
+                <li>Provide a user-friendly platform for job seekers to efficiently search and discover multiple job openings that match their desired profiles</li>
+                <li>Improve the effectiveness of job hunting by connecting users directly to job openings, streamlining the application process and reducing the time spent on searching for suitable opportunities.</li>
+                <li>We introduce a subscription-based model to offer users premium access to job referrals from professionals within the platform's network, providing them with a unique advantage in securing their dream jobs.</li>
+                <li>Foster collaboration between job seekers and companies by bringing them together in a novel way, facilitating a more interactive and mutually beneficial relationship in the job market.</li>
+                <li>Recognize and understand the challenges faced by job seekers in the current tech sector slowdown in India, and tailor the platform to address these specific challenges.</li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="contact">
+  <div class="container">
+      <div class="content">
+          <div class="left-side">
+              <div class="address details">
+                  <i class="fa-brands fa-whatsapp" data-caption="WhatsApp"></i>
+                  <div class="topic">WhatsApp Channel</div>
+              </div>
+              <div class="phone details">
+                  <i class="fas fa-phone-alt"></i>
+                  <div class="topic">Phone</div>
+                  <div class="text-one">+911234567890</div>
+              </div>
+              <div class="email details">
+                  <i class="fas fa-envelope"></i>
+                  <div class="topic">Email</div>
+                  <div class="text-one">starttechpath@gmail.com</div>
+              </div>
+          </div>
+          <div class="right-side">
+              <div class="topic-text">Contact Us</div>
+              <p>We value your feedback! If you have any suggestions or thoughts on how we can enhance your experience on our website, please share them with us using the contact form below.</p>
+              <div class="contactform">
+                  <form method="post">
+                      <!-- Update the form fields according to your new form -->
+                      {{ form.as_p }}
+                      {% csrf_token %}
+                      <input type="submit" value="Submit">
+                  </form>
+              </div>
+              {% if messages %}
+                <div class="messages">
+                        {{ messages }}
+                </div>
+              {% endif %}
+          </div>
+      </div>
+  </div>
+</div>
+
+
+{%endblock%}

@@ -1,0 +1,42 @@
+<!-- userapp/joblist.html -->
+<!DOCTYPE html>
+{% extends 'userapp/base.html' %}
+{% load static %}
+{% block jobsblock %}
+<link rel="stylesheet" href="{% static 'userapp/css/joblist.css' %}">
+<div class="jobdata">
+  {% if joblist %}
+    <h1>Job Listings</h1>
+    {% for listing in joblist %}
+      <div class="job-container">
+        <h2>{{ listing.company_name }}</h2>
+        <p>Job Position: {{ listing.position }}</p>
+        <p>Job Type: {{ listing.job_type }}</p>
+        <p>Location: {{ listing.location }}</p>
+        <p>Salary: {{ listing.salary }}</p>
+        <a href="{{ listing.company_website }}" target="_blank" class="apply-button">Apply Now</a>
+      </div>
+    {% endfor %}
+
+    <div class="pagination">
+      <span class="step-links">
+        {% if joblist.has_previous %}
+          <a href="?page=1">&laquo; first</a>
+          <a href="?page={{ joblist.previous_page_number }}">previous</a>
+        {% endif %}
+    
+        <span class="current">
+          Page {{ joblist.number }} of {{ joblist.paginator.num_pages }}.
+        </span>
+    
+        {% if joblist.has_next %}
+          <a href="?page={{ joblist.next_page_number }}">next</a>
+          <a href="?page={{ joblist.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+      </span>
+    </div>
+  {% else %}
+    <p>No job listed..</p>
+  {% endif %}
+</div>
+{% endblock %}

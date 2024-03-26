@@ -1,0 +1,26 @@
+<!-- userapp/payment_details.html -->
+{%load static%}
+<link rel="stylesheet" href="{% static 'userapp/css/payment_details.css' %}">
+<div class="container">
+    <h2>Payment Details</h2>
+    <p>Scan the QR code below to make the payment through your preferred UPI app.</p>
+
+    <!-- You can generate a QR code for your UPI ID using online tools -->
+    <img src="{% static 'userapp/images/qrcode.png' %}" alt="QR Code">
+
+    <p>After making the payment, click the "Confirm Payment" button below.</p>
+
+    <form method="post" onsubmit="showConfirmationMessage()">
+        {% csrf_token %}
+        <button type="submit">Confirm Payment</button>
+        {% if success_message %}
+        <div class="alert alert-success">
+            {{ success_message }}
+        </div>
+        {% endif %}
+    </form>
+    <div id="confirmation-popup" class="popup">
+        <p class="confirmation-message">After clicking the button check your registered mail. You can go back to home page now.</p>
+    </div>
+    <a href="{% url 'home' %}">Go Back to Homepage</a>
+</div>

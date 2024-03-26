@@ -1,0 +1,41 @@
+<!-- userapp/manage_profile.html -->
+{% extends 'userapp/base.html' %}
+{% load static %}
+{% block profile_content %}
+<link rel="stylesheet" href="{%static 'userapp/css/profile.css'%}">
+  <div class="container">
+    <h2>YOUR PROFILE</h2>
+    <p><strong>Username:</strong> {{ user_profile.user.username }}</p>
+    <p><strong>Name:</strong> {{ user_profile.user.first_name }} {{ user_profile.user.last_name }}</p>
+    <p><strong>Email:</strong> {{ user_profile.user.email }}</p>
+
+    {% if user_profile.profile_photo %}
+      {% if user_profile.is_premium %}
+        <img src="{{ user_profile.profile_photo.url }}" alt="User Photo" id="user-photo" class="premium-user">
+      {% else %}
+        <img src="{{ user_profile.profile_photo.url }}" alt="User Photo" id="user-photo">
+      {% endif %}
+    {% endif %}
+    
+    <div class="subscription-status">
+      <strong>Subscription Status:</strong>
+      {% if user_profile.is_premium %}
+          <span class="premium-status">Premium User</span>
+      {% else %}
+          <span class="regular-status">Regular User</span>
+      {% endif %}
+  </div>
+
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <p class="file-format-message">Note: Only PDF files are allowed for the resume.</p>
+      {% if success_message %}
+      <div class="alert alert-success">
+          {{ success_message }}
+      </div>
+      {% endif %}
+      <button type="submit">Save</button>
+    </form>
+  </div>
+{% endblock %}

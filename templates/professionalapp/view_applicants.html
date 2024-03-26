@@ -1,0 +1,46 @@
+<!-- view_applicants.html -->
+<!DOCTYPE html>
+{% extends 'professionalapp/base.html' %}
+{% load static %}
+{% block viewapplicantblock %}
+<link rel="stylesheet" href="{% static 'professionalapp/css/view_applicants.css' %}">
+    <div class="view_applicant">
+    <h2>Applicants for {{ professional_profile.company_name }}</h2>
+    {% if success_message %}
+        <div class="alert alert-success">
+            {{ success_message }}
+        </div>
+    {% endif %}
+    <table>
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Institute</th>
+                <th>Grade</th>
+                <th>Experience</th>
+                <th>Resume</th>
+                <th>Send approve mail</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for applicant, applicant_profile in applicants %}
+            <tr>
+                <td>{{ applicant.applicant.user.username }}</td>
+                <td>{{ applicant.applicant.user.email }}</td>
+                <td>{{ applicant_profile.institute }}</td>
+                <td>{{ applicant_profile.grade }}</td>
+                <td>{{ applicant_profile.experience }}</td>
+                <td><a href="{{ applicant_profile.resume.url }}" target="_blank">View Resume</a></td>
+                <td>
+                    <form action="{% url 'approve_applicant' applicant.id %}" method="post">
+                      {% csrf_token %}
+                      <button type="submit">Approve</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+{% endblock %}

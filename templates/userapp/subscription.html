@@ -1,0 +1,34 @@
+<!-- userapp/subscription.html -->
+{% extends 'userapp/base.html' %}
+{%load static%}
+{% block membership %}
+<link rel="stylesheet" href="{%static 'userapp/css/subscription.css'%}">
+  <div class="container">
+    <h2>Welcome to 'Start Tech Path' Premium Membership</h2>
+    <p class="intro">Where job searching meets unprecedented opportunities! With our Premium Membership, you gain exclusive access to job referrals directly from professionals in our vast network. Imagine having an insider advocate for you, making your journey towards your dream job smoother and more effective.</p>
+
+    <div class="benefits">
+        <h3>Benefits of Premium Membership:</h3>
+        <ul>
+            <li>Direct access to job referrals</li>
+            <li>Insider insights from professionals in our network</li>
+            <li>Stress-free job search experience</li>
+            <li>Endless opportunities to shape your career path</li>
+        </ul>
+    </div>
+
+    <p class="join">Join us on this transformative journey and unlock a world of opportunities. Your dream job is just a subscription away!</p>
+    {% if existing_subscription %}
+    <p class="error-message">You already have an existing subscription.</p>
+    {% endif %}
+    {% if existing_subscription.is_premium %}
+      <p class="congratulations">Congratulations! You are already a Premium Member. Membership valid until {{ existing_subscription.subscription_expiry|date:"F d, Y" }}</p>
+    {% else %}
+      <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Subscribe Now</button>
+      </form>
+    {% endif %}
+  </div>
+{% endblock %}

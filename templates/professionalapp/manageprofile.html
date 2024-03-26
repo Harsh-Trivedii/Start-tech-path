@@ -1,0 +1,38 @@
+<!-- professionalapp/manage_profile.html -->
+{% extends 'professionalapp/base.html' %}
+{% load static %}
+{% block profile_content %}
+<link rel="stylesheet" href="{% static 'professionalapp/css/profile.css' %}">
+<div class="container">
+    <h2>YOUR PROFILE</h2>
+    <p><strong>Username:</strong> {{ professional_profile.user.username }}</p>
+    <p><strong>Name:</strong> {{ professional_profile.user.first_name }} {{ professional_profile.user.last_name }}</p>
+    <p><strong>Email:</strong> {{ professional_profile.user.email }}</p>
+
+    {% if professional_profile.profile_photo %}
+    <img src="{{ professional_profile.profile_photo.url }}" alt="Profile Photo" id="user-photo">
+    {% endif %}
+
+    {% if professional_profile.is_approved %}
+        <p><strong>Approval Status:</strong> Approved</p>
+    {% else %}
+        <p><strong>Approval Status:</strong> Pending Approval</p>
+    {% endif %}
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    {% if success_message %}
+    <div class="alert alert-success">
+        {{ success_message }}
+    </div>
+    {% endif %}
+    {% if error_message %}
+    <div class="alert alert-danger">
+        {{ error_message }}
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

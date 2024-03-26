@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+{%load static%}
+{% load custom_tags %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>START TECH PATH</title>
+    <link rel="stylesheet" href="{%static 'userapp/css/base.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!-- This is base for logged in user -->
+    <div class="header">
+        <nav>
+            <div class="logo">
+                <img src="{%static 'userapp/images/logo.png'%}">
+            </div>
+            <ul>
+                <li><i class="fa-solid fa-house"></i><a href="{% url 'home'%}"> Home</a></li>
+                <li><i class="fa-solid fa-briefcase"></i><a href="{% url 'joblist'%}"> Job Openings</a></li>
+                <li><i class="fa-solid fa-handshake"></i> <a href="{%url 'subscribe'%}">Take membership</a></li>
+                {% if request.user|is_premium_user %}
+                    <li><i class="fa-solid fa-inbox"></i><a href="{% url 'see_active_referrals'%}"> See Active referrals</a></li>
+                {% endif %}
+                <li><i class="fa-regular fa-user"></i><a href="{% url 'manage_profile'%}"> Manage Profile</a></li>
+                <li><i class="fa-solid fa-arrow-right"></i><a href="{% url 'logout_view' %}"> Logout</a></li>
+            </ul>
+
+            <div class="icon">
+                <a href="https://t.me/starttechpath"><i class="fa-brands fa-telegram"></i></a>
+                <a href="#contact"><i class="fa-regular fa-address-card" data-caption="Feedback"></i></a>
+                <a href="https://whatsapp.com/channel/0029VaA08cw8kyyR5dRjo538"><i class="fa-brands fa-whatsapp" data-caption="WhatsApp"></i></a>
+            </div>
+        </nav>
+    </div>
+
+    <div class="mainpage">
+        {% block bodyblock %}{% endblock %}
+    </div>
+
+    <div class="joblist">
+        {%block jobsblock%}{%endblock%}
+    </div>
+
+    <div class="profile">
+        {%block profile_content%} {%endblock%}
+    </div>
+
+    <div class="membership">
+        {%block membership%} {%endblock%}
+    </div>
+
+    <div class="referral">
+        {%block referralblock%} {%endblock%}
+    </div>
+
+    <footer>
+        <div class="footer_main">
+            <div class="footer_tag">
+                <h2>Quick Link</h2>
+                <p><a href="{% url 'home' %}">Home</a></p>
+                <p><a href="{% url 'manage_profile' %}">Manage Profile</a></p>
+                <p><a href="{% url 'logout_view' %}">Logout</a></p>
+            </div>
+            
+            <div class="footer_tag">
+                <h2>Contact</h2>
+                <p>starttechpath@gmail.com</p>
+            </div>
+
+            <div class="footer_tag">
+                <h2>Our handles</h2>
+                <a href="https://t.me/starttechpath"><i class="fa-brands fa-telegram"></i></a>
+                <a href="https://whatsapp.com/channel/0029VaA08cw8kyyR5dRjo538"><i class="fa-brands fa-whatsapp" data-caption="WhatsApp"></i></a>
+                <a href="https://www.linkedin.com/in/harsh-trivedii/"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+
+        </div>
+
+        <p class="end">Design by<span><i class="fa-solid fa-code"></i></span> Harsh Trivedi</p>
+    </footer>
+
+
+</body>
+</html>

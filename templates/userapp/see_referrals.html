@@ -1,0 +1,48 @@
+{% extends 'userapp/base.html' %}
+{% load static %}
+
+{% block referralblock %}
+<link rel="stylesheet" href="{% static 'userapp/css/see_referrals.css' %}">
+<div class="referralpage">
+    <h2>Active Referrals</h2>
+
+    {% if active_referrals %}
+        <ul>
+            {% for job in active_referrals %}
+                <li>
+                    <strong>{{ job.company_name }} - {{ job.job_position }}</strong>
+                    <p>Year of Passing: {{ job.passing_year }}</p>
+                    <p>Grade required: {{ job.grade }}</p>
+                    <p>Experience required: {{ job.experience }}</p>
+                    <p>{{ job.eligibility_criteria }}</p>
+                    <form method="post" action="{% url 'see_active_referrals' %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="job_id" value="{{ job.id }}">
+                        <button type="submit">Apply</button>
+                    </form>
+
+                    {% if job.id == success_job_id %}
+                        <div class="alert alert-success">
+                            {{ success_message }}
+                        </div>
+                    {% endif %}
+
+                    {% if job.id == applied_job_id %}
+                        <div class="alert alert-info">
+                            {{ applied_message }}
+                        </div>
+                    {% endif %}
+                    
+                    {% if job.id == fail_job_id %}    
+                        <div class="alert alert-danger">
+                            {{ fail_message }}
+                        </div>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No active referrals available at the moment.</p>
+    {% endif %}
+</div>
+{% endblock %}

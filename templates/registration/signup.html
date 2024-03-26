@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+{%load static%}
+<head>
+    <title>Registration Page</title>
+    <link rel="stylesheet" href="{% static 'userapp/css/signup.css' %}">
+</head>
+<body>
+    <div class="signup">
+        <h1>Registration Form</h1>
+        <form method="post">
+            {{form.as_p}}
+            {%csrf_token%}
+            <input type='submit' value="Sign Up">
+            <p class="professional-signup-link">Professional user? <a href="{% url 'professional_signup' %}">Sign up here</a></p>
+        </form>
+    </div>
+</body>
+</html>

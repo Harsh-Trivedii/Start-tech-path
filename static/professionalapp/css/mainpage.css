@@ -1,0 +1,236 @@
+section{
+    height: 100vh;
+}
+section .main{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    
+}
+
+section .main .men_text h1{
+    font-size: 50px;
+    position: relative;
+    left: 20px;
+}
+
+section .main .men_text h1 span{
+    margin-left: 15px;
+    color: #fac031;
+    font-family: mv boli;
+    line-height: 22px;
+    font-size: 40px;
+}
+
+section .main .main_image img{
+    width: 500px;
+    position: relative;
+    left: 20px;
+}
+
+section p{
+    width: 750px;
+    text-align: justify;
+    position: relative;
+    left: 123px;
+    bottom: 80px;
+    line-height: 22px;
+    font-weight: bold; 
+    color: #333; 
+    font-size:18px;
+}
+
+section .main_btn{
+    background: #fac031;
+    position: relative;
+    left: 123px;
+    bottom: 30px;
+    width: 150px;
+    cursor: pointer;
+    padding: 12px 25px;
+}
+
+section .main_btn a{
+    color: #fff;
+    margin-right: 5px;
+    text-decoration: none;
+}
+
+section .main_btn i{
+    color: #fff;
+    transition: 0.3s;
+}
+
+section .main_btn:hover i{
+    transform: translateX(7px);
+}
+
+/* Objectives style */
+.objectives{
+    height: 650px;
+}
+
+.objectives .obj_main{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.objectives .obj_main .image img{
+    width: 600px;
+    position: relative;
+    top: 60px;
+    height: 500px;
+}
+
+.objectives .obj_main .obj_text h1 span{
+    color: #fac031;
+    margin-right: 15px;
+    font-family: mv boli;
+}
+
+.objectives .obj_main .obj_text h1{
+    font-size: 55px;
+    position: relative;
+    bottom: 50px;
+}
+
+.objectives .obj_main .obj_text h3{
+    font-size: 30px;
+    margin: 0 0 50px 0;
+}
+
+
+.objectives .obj_main .obj_text ul {
+    list-style-type: disc; /* Set the list item marker type */
+    margin-left: 20px;
+    margin-right: 20px; 
+    font-weight: bold; 
+    color: #333;
+    font-size: 16px; /* Adjust the font size as needed */
+    line-height: 1.6; /* Set line height for better readability */
+}
+
+.objectives .obj_main .obj_text ul li {
+    margin-bottom: 10px; /* Add some spacing between list items */
+}
+
+
+
+/* Contact Form style */
+.contact {
+  height: 500px;
+}
+
+.container {
+  width: 90%;
+  background: #fff;
+  border-radius: 6px;
+  padding: 20px 60px 30px 40px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  margin-left: 50px;
+}
+
+.container .content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container .content .left-side {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+  position: relative;
+}
+
+.content .left-side::before {
+  content: '';
+  position: absolute;
+  height: 70%;
+  width: 2px;
+  right: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #afafb6;
+}
+
+.content .left-side .details {
+  margin: 14px;
+  text-align: center;
+}
+
+.content .left-side .details i {
+  font-size: 30px;
+  color: #fac031;
+  margin-bottom: 10px;
+}
+
+.content .left-side .details .topic {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.content .left-side .details .text-one,
+.content .left-side .details .text-two {
+  font-size: 14px;
+  color: #afafb6;
+}
+
+.container .content .right-side {
+  width: 75%;
+  margin-left: 75px;
+}
+
+.content .right-side .topic-text {
+  font-size: 23px;
+  font-weight: 600;
+  color: #fac031;
+}
+
+.container .content .right-side .contactform {
+  max-width: 800px; /* Adjusted max-width for a more compact form */
+  padding: 20px;
+  background-color: #fff;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container .content .right-side form {
+  display: flex;
+  flex-direction: column;
+}
+
+.container .content .right-side label {
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.container .content .right-side input,
+.container .content .right-side textarea {
+  margin-bottom: 12px; /* Adjusted margin for better alignment */
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box; /* Added box-sizing for better input size */
+}
+
+.container .content .right-side input[type="submit"] {
+  width: 200px; /* Make the button full-width */
+  background-color: #fac031;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: none;
+  border-radius: 4px;
+}
+
+.container .content .right-side input[type="submit"]:hover {
+  background-color: #ffd700;
+}

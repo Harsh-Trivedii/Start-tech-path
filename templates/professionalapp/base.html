@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>START TECH PATH</title>
+    <link rel="stylesheet" href="{%static 'professionalapp/css/base.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!-- This is base for logged in professional -->
+    <div class="header">
+        <nav>
+            <div class="logo">
+                <img src="{%static 'userapp/images/logo.png'%}">
+            </div>
+            <div class="toggleMenu" onclick="menuToggle();"></div>
+            <ul>
+                <li><i class="fa-solid fa-house"></i><a href="{% url 'homepage'%}"> Home</a></li>
+                <li><i class="fa-solid fa-briefcase"></i><a href="{% url 'addjob'%}">Add Job</a></li>
+                <li><i class="fa-solid fa-handshake"></i> <a href="{%url 'viewapplicants'%}">View Applicants</a></li>
+                <li><i class="fa-regular fa-user"></i><a href="{%url 'manageprofile'%}"> Manage Profile</a></li>
+                <li><i class="fa-solid fa-arrow-right"></i><a href="{% url 'professional_logout_view' %}"> Logout</a></li>
+            </ul>
+
+            <div class="icon">
+                <i class="fa-solid fa-magnifying-glass" data-caption="Search"></i>
+                <i class="fa-regular fa-address-card" data-caption="Feedback"></i>
+                <i class="fa-brands fa-whatsapp" data-caption="WhatsApp"></i>
+            </div>
+        </nav>
+    </div>
+
+    <div class="mainpage">
+        {% block bodyblock %}{% endblock %}
+    </div>
+
+    <div class="joblist">
+        {%block addjobblock%}{%endblock%}
+    </div>
+
+    <div class="viewapplicant">
+        {%block viewapplicantblock%}{%endblock%}
+    </div>
+
+    <div class="manageprofile">
+        {%block profile_content%}{%endblock%}
+    </div>
+        
+    <footer>
+        <div class="footer_main">
+            <div class="footer_tag">
+                <h2>Quick Link</h2>
+                <p><a href="{% url 'homepage' %}">Home</a></p>
+                <p><a href="{%url 'manageprofile'%}">Manage Profile</a></p>
+                <p><a href="{% url 'logout_view' %}">Logout</a></p>
+            </div>
+            
+            <div class="footer_tag">
+                <h2>Contact</h2>
+                <p>starttechpath@gmail.com</p>
+            </div>
+
+            <div class="footer_tag">
+                <h2>Our handles</h2>
+                <i class="fa-brands fa-telegram"></i>
+                <i class="fa-brands fa-whatsapp" data-caption="WhatsApp"></i>
+                <i class="fa-brands fa-linkedin-in"></i>
+            </div>
+
+        </div>
+
+        <p class="end">Design by<span><i class="fa-solid fa-code"></i></span> Harsh Trivedi</p>
+    </footer>
+</body>
+</html>
